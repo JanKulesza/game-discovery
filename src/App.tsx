@@ -6,20 +6,17 @@ import GameGrid from "./components/GameGrid";
 function App() {
   return (
     <Grid
-      m={0}
-      w={"calc(100vw)"}
+      bg={{ _dark: "#141414" }}
       templateAreas={{
         base: `"nav" "main"`,
         lg: `"nav nav" "aside main"`,
       }}
     >
-      <GridItem padding={"5px"} area={"nav"} bg={{ _dark: "gray.900" }}>
+      <GridItem padding={"5px"} area={"nav"}>
         <NavBar />
       </GridItem>
-      <GridItem display={{ lg: "block", base: "none" }} bg={"black"}>
-        Aside
-      </GridItem>
-      <GridItem area={"main"} bg={"blue"}>
+      <GridItem display={{ lg: "block", base: "none" }}>Aside</GridItem>
+      <GridItem area={"main"}>
         <GameGrid />
       </GridItem>
     </Grid>
