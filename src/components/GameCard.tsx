@@ -18,7 +18,7 @@ const GameCard = ({ game }: Props) => {
       border="none"
       overflow="hidden"
     >
-      <Image src={game.background_image} />
+      <Image src={getCroppedImage(game.background_image)} />
 
       <Card.Header
         lineHeight={1}
