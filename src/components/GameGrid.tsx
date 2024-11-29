@@ -1,11 +1,11 @@
 import useGames from "@/hooks/useGames";
 
 const GameGrid = () => {
-  const { games, error } = useGames();
+  const { data, error } = useGames();
 
   return (
     <ul>
-      {games.map((game) => (
+      {data.map((game) => (
         <li>{game.name}</li>
       ))}
       ;

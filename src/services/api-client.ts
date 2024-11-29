@@ -17,8 +17,10 @@ class APIClient<T> {
   constructor(endpoint: string) {
     this.endpoint = endpoint;
   }
-  getAll = () => {
-    return apiClient.get<FetchGamesResponse<T>>(this.endpoint);
+  getAll = (controller: AbortController) => {
+    return apiClient.get<FetchGamesResponse<T>>(this.endpoint, {
+      signal: controller.signal,
+    });
   };
 }
 
