@@ -13,7 +13,7 @@ const GameGrid = () => {
       rowGap={5}
     >
       {data.map((game) => (
-        <GameCard game={game} />
+        <GameCard key={game.id} game={game} />
       ))}
       ;
     </SimpleGrid>

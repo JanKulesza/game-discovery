@@ -1,6 +1,9 @@
 import { Game } from "@/hooks/useGames";
 import { Card, Image, Text, VStack } from "@chakra-ui/react";
 import PlatformsIconList from "./PlatformIconList";
+import RatingCount from "./RatingsCount";
+import RatingsCount from "./RatingsCount";
+import getCroppedImage from "@/services/image-url";
 
 interface Props {
   game: Game;
@@ -27,6 +30,7 @@ const GameCard = ({ game }: Props) => {
           platforms={game.parent_platforms.map(({ platform }) => platform)}
         />
         {game.name}
+        <RatingsCount ratingsCount={game.ratings_count} />
       </Card.Header>
     </Card.Root>
   );
