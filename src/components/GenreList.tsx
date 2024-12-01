@@ -5,9 +5,10 @@ import GenreListSkeleton from "./GenreListSkeleton";
 
 interface Props {
   onSelectGenre: (genreId: number) => void;
+  selectedGenreId: number | null;
 }
 
-const GenreList = ({ onSelectGenre }: Props) => {
+const GenreList = ({ onSelectGenre, selectedGenreId }: Props) => {
   const { data: genres, error, isLoading } = useGenre();
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8];
 
@@ -27,13 +28,21 @@ const GenreList = ({ onSelectGenre }: Props) => {
             transition="0.3s"
             w="100%"
             h="100%"
-            bg={{ _hover: "gray.900" }}
+            bg={{
+              _hover: "#202020",
+              base: selectedGenreId === g.id ? "#202020" : "",
+            }}
             onClick={() => {
               onSelectGenre(g.id);
             }}
           >
             <Avatar size="sm" src={g.image_background} shape="rounded" />
-            <Text color="white">{g.name}</Text>
+            <Text
+              fontWeight={selectedGenreId === g.id ? "bold" : ""}
+              color="white"
+            >
+              {g.name}
+            </Text>
           </HStack>
         ))}
       </VStack>

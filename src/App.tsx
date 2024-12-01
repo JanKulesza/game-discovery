@@ -22,10 +22,9 @@ function App() {
       <GridItem display={{ lg: "block", base: "none" }}>
         <GenreList
           onSelectGenre={(genreId) => {
-            console.log(genreId);
-
             setGenreId(genreId);
           }}
+          selectedGenreId={selectedGenreId}
         />
       </GridItem>
       <GridItem area={"main"}>
