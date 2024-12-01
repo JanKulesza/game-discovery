@@ -31,7 +31,7 @@ const PlatformsIconList = ({ platforms }: Props) => {
 
   return (
     <>
-      <HStack gap={2}>
+      <HStack marginBottom={1} gap={2}>
         {platforms.map((platform) => (
           <Icon fontSize="16px" key={platform.id}>
             {iconMap[platform.slug] || <BsGlobe />}

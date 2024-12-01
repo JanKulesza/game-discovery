@@ -14,6 +14,6 @@ export interface Game {
   ratings_count: number;
 }
 
-const useGames = <T>() => useData<Game>("/games");
+const useGames = () => useData<Game>("/games");
 
 export default useGames;

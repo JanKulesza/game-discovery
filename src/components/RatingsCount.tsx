@@ -1,5 +1,5 @@
-import { Button, Text } from "@chakra-ui/react";
-import React, { useState } from "react";
+import { Button, Icon, Text } from "@chakra-ui/react";
+import { useState } from "react";
 import { FaPlus } from "react-icons/fa";
 
 interface Props {
@@ -15,10 +15,15 @@ const RatingCounts = ({ ratingsCount }: Props) => {
       color={{ _dark: "white", _hover: "#373737" }}
       transition="0.5s"
       border="none"
-      w={15}
-      h={3}
+      marginTop={1}
+      minWidth="2.75em"
+      width="fit-content"
+      padding={2}
+      height="1.2em"
     >
-      <FaPlus fontSize={8} />
+      <Icon boxSize="4">
+        <FaPlus />
+      </Icon>
       <Text fontSize={14}>{ratings}</Text>
     </Button>
   );

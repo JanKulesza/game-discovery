@@ -24,7 +24,7 @@ const GameCard = ({ game }: Props) => {
         lineHeight={1}
         marginBottom={8}
         fontWeight="bold"
-        fontSize="1.75rem"
+        fontSize="1.5rem"
       >
         <PlatformsIconList
           platforms={game.parent_platforms.map(({ platform }) => platform)}
