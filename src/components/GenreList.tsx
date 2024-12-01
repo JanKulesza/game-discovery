@@ -3,8 +3,12 @@ import { Avatar } from "@/components/ui/avatar";
 import { Heading, HStack, Text, VStack } from "@chakra-ui/react";
 import GenreListSkeleton from "./GenreListSkeleton";
 
-const GenreList = () => {
-  const { data: genres, isLoading } = useGenre();
+interface Props {
+  onSelectGenre: (genreId: number) => void;
+}
+
+const GenreList = ({ onSelectGenre }: Props) => {
+  const { data: genres, error, isLoading } = useGenre();
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8];
 
   return (
@@ -25,7 +29,7 @@ const GenreList = () => {
             h="100%"
             bg={{ _hover: "gray.900" }}
             onClick={() => {
-              console.log(g.name);
+              onSelectGenre(g.id);
             }}
           >
             <Avatar size="sm" src={g.image_background} shape="rounded" />

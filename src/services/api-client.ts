@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosRequestConfig } from "axios";
 
 interface FetchGamesResponse<T> {
   count: number;
@@ -17,9 +17,15 @@ class APIClient<T> {
   constructor(endpoint: string) {
     this.endpoint = endpoint;
   }
-  getAll = (controller: AbortController) => {
+  getAll = (
+    controller: AbortController,
+    requestConfig?: AxiosRequestConfig
+  ) => {
+    console.log(requestConfig);
+
     return apiClient.get<FetchGamesResponse<T>>(this.endpoint, {
       signal: controller.signal,
+      ...requestConfig,
     });
   };
 }
