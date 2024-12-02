@@ -11,15 +11,18 @@ const RatingCounts = ({ ratingsCount }: Props) => {
   return (
     <Button
       onClick={() => setRatings(ratings + 1)}
-      bg={{ _dark: "#373737", _light: "#e4e4e7", _hover: "#202020" }}
-      color={{ _dark: "white", _hover: "white" }}
+      bg={{
+        _dark: "#373737",
+        _light: "#e4e4e7",
+        _hover: { _dark: "#505050", base: "#999999" },
+      }}
       transition="0.5s"
       border="none"
       marginTop={1}
       minWidth="2.75em"
       width="fit-content"
       padding={2}
-      height="1.2em"
+      height="1.8rem"
     >
       <Icon boxSize="4" color={{ _dark: "white", _light: "black" }}>
         <FaPlus />

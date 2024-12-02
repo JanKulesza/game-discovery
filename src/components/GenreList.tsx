@@ -1,14 +1,14 @@
-import useGenre from "@/hooks/useGenre";
+import useGenre, { Genre } from "@/hooks/useGenre";
 import { Avatar } from "@/components/ui/avatar";
 import { Heading, HStack, Text, VStack } from "@chakra-ui/react";
 import GenreListSkeleton from "./GenreListSkeleton";
 
 interface Props {
-  onSelectGenre: (genreId: number) => void;
-  selectedGenreId: number | null;
+  onSelectGenre: (genre: Genre) => void;
+  selectedGenre: Genre | null;
 }
 
-const GenreList = ({ onSelectGenre, selectedGenreId }: Props) => {
+const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
   const { data: genres, error, isLoading } = useGenre();
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8];
 
@@ -31,17 +31,17 @@ const GenreList = ({ onSelectGenre, selectedGenreId }: Props) => {
             bg={{
               _hover: { _dark: "#202020", _light: "#f4f4f5" },
               base:
-                selectedGenreId === g.id
+                selectedGenre?.id === g.id
                   ? { _dark: "#202020", _light: "#f4f4f5" }
                   : "",
             }}
             onClick={() => {
-              onSelectGenre(g.id);
+              onSelectGenre(g);
             }}
           >
             <Avatar size="sm" src={g.image_background} shape="rounded" />
             <Text
-              fontWeight={selectedGenreId === g.id ? "bold" : ""}
+              fontWeight={selectedGenre?.id === g.id ? "bold" : ""}
               color={{ _dark: "white", _light: "black" }}
             >
               {g.name}
