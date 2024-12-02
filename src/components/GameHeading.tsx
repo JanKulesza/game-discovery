@@ -16,7 +16,7 @@ const GameHeading = ({ gameQuery }: Props) => {
 
   return (
     <Box marginBottom={5} lineHeight={3}>
-      <Heading fontWeight={"bold"} fontSize={56} as={"h1"}>
+      <Heading lineHeight={1} fontWeight={"bold"} fontSize={56} as={"h1"}>
         {heading ? heading : "New and Trending"}
       </Heading>
       <Text fontSize={18} as={"p"} padding={1}>

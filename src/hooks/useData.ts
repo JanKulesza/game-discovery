@@ -1,34 +1,20 @@
 import APIClient from "@/services/api-client";
+import { useQuery } from "@tanstack/react-query";
 import { AxiosRequestConfig } from "axios";
-import { useState, useEffect } from "react";
 
 const useData = <T>(
   endpoint: string,
-  requestConfig?: AxiosRequestConfig,
-  deps?: any[]
+  queryKey: any[],
+  queryConfig?: object,
+  requestConfig?: AxiosRequestConfig
 ) => {
-  const [data, setdata] = useState<T[]>([]);
-  const [error, setError] = useState("");
-  const [isLoading, setLoading] = useState(false);
-
   const { getAll } = new APIClient<T>(endpoint);
 
-  useEffect(
-    () => {
-      const controller = new AbortController();
-
-      setLoading(true);
-      getAll(controller, requestConfig)
-        .then((res) => {
-          setdata(res.data.results);
-          setLoading(false);
-        })
-        .catch((err) => setError(err.message));
-
-      return () => controller.abort();
-    },
-    deps ? [...deps] : []
-  );
+  const { data, error, isLoading } = useQuery({
+    queryKey: queryKey,
+    queryFn: () => getAll(requestConfig),
+    ...queryConfig,
+  });
 
   return { data, error, isLoading };
 };

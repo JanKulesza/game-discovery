@@ -1,7 +1,8 @@
 import axios, { AxiosRequestConfig } from "axios";
 
-interface FetchGamesResponse<T> {
+export interface FetchResponse<T> {
   count: number;
+  next: string | null;
   results: T[];
 }
 
@@ -17,15 +18,10 @@ class APIClient<T> {
   constructor(endpoint: string) {
     this.endpoint = endpoint;
   }
-  getAll = (
-    controller: AbortController,
-    requestConfig?: AxiosRequestConfig
-  ) => {
-    return apiClient.get<FetchGamesResponse<T>>(this.endpoint, {
-      signal: controller.signal,
+  getAll = (requestConfig?: AxiosRequestConfig) =>
+    apiClient.get<FetchResponse<T>>(this.endpoint, {
       ...requestConfig,
     });
-  };
 }
 
 export default APIClient;

@@ -7,19 +7,19 @@ import {
   MenuRoot,
   MenuTrigger,
   VStack,
+  Text,
 } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
 
 interface Props {
-  onSelectPlatform: (platform: Platform) => void;
-  selectedPlatformName: string | null;
+  onSelectPlatform: (platformId: number) => void;
+  selectedPlatformId: number | null;
 }
 
-const PlatformSelector = ({
-  onSelectPlatform,
-  selectedPlatformName,
-}: Props) => {
-  const { data: platforms } = usePlatform();
+const PlatformSelector = ({ onSelectPlatform, selectedPlatformId }: Props) => {
+  const { data: platforms, error } = usePlatform();
+
+  if (error) return <Text>{error.message}</Text>;
 
   return (
     <MenuRoot>
@@ -31,7 +31,10 @@ const PlatformSelector = ({
             variant="outline"
             size="md"
           >
-            {selectedPlatformName ? selectedPlatformName : "Select Platform"}
+            {selectedPlatformId
+              ? platforms?.data.results.find((p) => p.id === selectedPlatformId)
+                  ?.name
+              : "Select Platform"}
             <BsChevronDown />
           </Button>
         </MenuTrigger>
@@ -39,15 +42,15 @@ const PlatformSelector = ({
           borderRadius={"1em"}
           bg={{ _dark: "#202020" }}
           w={"fit-content"}
-          position={"absolute"}
-          top={12}
+          position={"fixed"}
+          marginTop={12}
         >
-          {platforms.map((p) => (
+          {platforms?.data.results?.map((p) => (
             <MenuItem
               cursor="pointer"
               key={p.id}
               value={p.slug}
-              onClick={() => onSelectPlatform(p)}
+              onClick={() => onSelectPlatform(p.id)}
             >
               {p.name}
             </MenuItem>

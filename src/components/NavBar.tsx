@@ -9,7 +9,12 @@ interface Props {
 const NavBar = ({ onSubmit }: Props) => {
   return (
     <HStack justifyContent={"space-between"}>
-      <Text marginLeft={10} fontSize={36} fontWeight={"bold"}>
+      <Text
+        marginLeft={{ sm: 5, base: 10, lg: 10 }}
+        fontSize={36}
+        fontWeight={"bold"}
+        minW={"115px"}
+      >
         D I S C
       </Text>
       <SearchInput onSubmit={onSubmit} />

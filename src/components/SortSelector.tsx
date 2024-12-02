@@ -35,8 +35,8 @@ const SortSelector = ({ onSelectSortOrder, sortOrder }: Props) => {
           borderRadius={"1em"}
           bg={{ _dark: "#202020" }}
           w="fit-content"
-          position={"absolute"}
-          top={12}
+          position={"fixed"}
+          marginTop={12}
         >
           {sortOrders.map((order) => (
             <MenuItem

@@ -1,4 +1,5 @@
-import data from "@/data/genres";
+import genres from "@/data/genres";
+import useData from "./useData";
 
 export interface Genre {
   id: number;
@@ -7,7 +8,11 @@ export interface Genre {
   slug: string;
 }
 
-const useGenre = () => ({ data: data, isLoading: false, error: null });
+const useGenre = () =>
+  useData<Genre>("/genres", ["genres"], {
+    initialData: genres,
+    staleTime: 24 * 60 * 60 * 1000, //24h
+  });
 // const useGenre = () => useData<Genre>("/genres");
 
 export default useGenre;
