@@ -1,4 +1,4 @@
-import useGenre, { Genre } from "@/hooks/useGenre";
+import useGenre from "@/hooks/useGenre";
 import { Avatar } from "@/components/ui/avatar";
 import { Heading, HStack, Text, VStack } from "@chakra-ui/react";
 import GenreListSkeleton from "./GenreListSkeleton";
