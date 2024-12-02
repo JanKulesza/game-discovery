@@ -21,7 +21,7 @@ const GameHeading = ({ gameQuery }: Props) => {
         {heading ? heading : "New and Trending"}
       </Heading>
       <Text fontSize={18} as={"p"} padding={1}>
-        Based on player counts and
+        Based on player counts and{" "}
         {!currentSortOrder ? " Relevance" : currentSortOrder.label}
       </Text>
     </Box>
