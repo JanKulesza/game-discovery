@@ -1,4 +1,3 @@
-import { Platform } from "@/hooks/useGames";
 import usePlatform from "@/hooks/usePlatforms";
 import {
   Button,
