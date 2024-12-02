@@ -36,7 +36,7 @@ const SortSelector = ({ onSelectSortOrder, sortOrder }: Props) => {
             variant="outline"
             size="md"
           >
-            Sort By: {currentSortOrder?.label}
+            Sort By: {currentSortOrder?.label || "Relevance"}
             <BsChevronDown />
           </Button>
         </MenuTrigger>
