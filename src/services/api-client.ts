@@ -21,8 +21,6 @@ class APIClient<T> {
     controller: AbortController,
     requestConfig?: AxiosRequestConfig
   ) => {
-    console.log(requestConfig);
-
     return apiClient.get<FetchGamesResponse<T>>(this.endpoint, {
       signal: controller.signal,
       ...requestConfig,
