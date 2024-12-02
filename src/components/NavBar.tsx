@@ -1,5 +1,4 @@
-import { HStack, Image } from "@chakra-ui/react";
-import logo from "../assets/logo.webp";
+import { HStack, Text } from "@chakra-ui/react";
 import { ColorModeButton } from "./ui/color-mode";
 import SearchInput from "./SearchInput";
 
@@ -10,7 +9,9 @@ interface Props {
 const NavBar = ({ onSubmit }: Props) => {
   return (
     <HStack justifyContent={"space-between"}>
-      <Image borderRadius={"1em"} boxSize={"60px"} src={logo} />
+      <Text marginLeft={10} fontSize={36} fontWeight={"bold"}>
+        D I S C
+      </Text>
       <SearchInput onSubmit={onSubmit} />
       <ColorModeButton
         size={"lg"}

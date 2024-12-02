@@ -1,7 +1,6 @@
 import { GameQuery } from "@/App";
 import { sortOrders } from "@/services/constants";
-import { Box, Heading, Text, VStack } from "@chakra-ui/react";
-import React from "react";
+import { Box, Heading, Text } from "@chakra-ui/react";
 
 interface Props {
   gameQuery: GameQuery;

@@ -19,7 +19,7 @@ const PlatformSelector = ({
   onSelectPlatform,
   selectedPlatformName,
 }: Props) => {
-  const { data: platforms, error } = usePlatform();
+  const { data: platforms } = usePlatform();
 
   return (
     <MenuRoot>
