@@ -29,8 +29,11 @@ const GenreList = ({ onSelectGenre, selectedGenreId }: Props) => {
             w="100%"
             h="100%"
             bg={{
-              _hover: "#202020",
-              base: selectedGenreId === g.id ? "#202020" : "",
+              _hover: { _dark: "#202020", _light: "#f4f4f5" },
+              base:
+                selectedGenreId === g.id
+                  ? { _dark: "#202020", _light: "#f4f4f5" }
+                  : "",
             }}
             onClick={() => {
               onSelectGenre(g.id);
@@ -39,7 +42,7 @@ const GenreList = ({ onSelectGenre, selectedGenreId }: Props) => {
             <Avatar size="sm" src={g.image_background} shape="rounded" />
             <Text
               fontWeight={selectedGenreId === g.id ? "bold" : ""}
-              color="white"
+              color={{ _dark: "white", _light: "black" }}
             >
               {g.name}
             </Text>

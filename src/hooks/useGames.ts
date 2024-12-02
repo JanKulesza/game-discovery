@@ -14,9 +14,16 @@ export interface Game {
   ratings_count: number;
 }
 
-const useGames = (selectedGenreId: number | null) =>
-  useData<Game>("/games", { params: { genres: selectedGenreId } }, [
-    selectedGenreId,
-  ]);
+const useGames = (
+  selectedGenreId: number | null,
+  selectedPlatformId: number | null
+) =>
+  useData<Game>(
+    "/games",
+    {
+      params: { genres: selectedGenreId, parent_platforms: selectedPlatformId },
+    },
+    [selectedGenreId, selectedPlatformId]
+  );
 
 export default useGames;

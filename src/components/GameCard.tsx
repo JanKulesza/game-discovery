@@ -14,7 +14,7 @@ const GameCard = ({ game }: Props) => {
     <Card.Root
       h="fit-content"
       borderRadius="20px"
-      bg={{ _dark: "#202020" }}
+      bg={{ _dark: "#202020", _light: "#f4f4f5" }}
       border="none"
       overflow="hidden"
     >

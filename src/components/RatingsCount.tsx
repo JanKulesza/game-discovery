@@ -11,8 +11,8 @@ const RatingCounts = ({ ratingsCount }: Props) => {
   return (
     <Button
       onClick={() => setRatings(ratings + 1)}
-      bg={{ _dark: "#373737", _hover: "white" }}
-      color={{ _dark: "white", _hover: "#373737" }}
+      bg={{ _dark: "#373737", _light: "#e4e4e7", _hover: "#202020" }}
+      color={{ _dark: "white", _hover: "white" }}
       transition="0.5s"
       border="none"
       marginTop={1}
@@ -21,10 +21,12 @@ const RatingCounts = ({ ratingsCount }: Props) => {
       padding={2}
       height="1.2em"
     >
-      <Icon boxSize="4">
+      <Icon boxSize="4" color={{ _dark: "white", _light: "black" }}>
         <FaPlus />
       </Icon>
-      <Text fontSize={14}>{ratings}</Text>
+      <Text color={{ _dark: "white", _light: "black" }} fontSize={14}>
+        {ratings}
+      </Text>
     </Button>
   );
 };
