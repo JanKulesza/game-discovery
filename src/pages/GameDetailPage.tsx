@@ -17,17 +17,23 @@ const GameDetailPage = () => {
 
   return (
     <Grid
-      paddingX={50}
-      templateAreas={{ base: `"main aside"`, smDown: `"main" "aside"` }}
+      paddingX={{ base: 50, mdDown: 0 }}
+      templateAreas={{ base: `"main aside"`, mdDown: `"main"` }}
     >
       <GridItem>
-        <Heading marginY={16} fontWeight={"bold"} fontSize={56} as={"h1"}>
+        <Heading
+          marginY={16}
+          lineHeight={1}
+          fontWeight={"bold"}
+          fontSize={56}
+          as={"h1"}
+        >
           {game.name}
         </Heading>
         <ExpandableText>{game.description_raw}</ExpandableText>
         <GameAttributes game={game} />
       </GridItem>
-      <GridItem paddingLeft={30}>
+      <GridItem paddingLeft={{ base: 30, mdDown: 0 }}>
         <GameTrailer gameId={game.id} />
         <GameScreenShots gameId={game.id} />
       </GridItem>

@@ -9,10 +9,10 @@ const GameScreenShots = ({ gameId }: Props) => {
   const { data } = useScreenShot(gameId);
 
   return (
-    <SimpleGrid gap={2} columns={{ smDown: 1, base: 2 }}>
+    <SimpleGrid gap={2} columns={{ lgDown: 1, base: 2 }}>
       {data?.results.map((s) => (
         <Image
-          borderRadius={"1em"}
+          borderRadius={"16px"}
           _hover={{
             transform: "scale(1.03)",
           }}

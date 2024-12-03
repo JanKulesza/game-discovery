@@ -11,7 +11,7 @@ const GameTrailer = ({ gameId }: Props) => {
 
   return first ? (
     <AspectRatio
-      h={480}
+      h={"auto"}
       marginBottom={5}
       borderRadius={"1em"}
       overflow={"hidden"}
