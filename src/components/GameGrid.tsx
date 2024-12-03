@@ -16,7 +16,6 @@ const GameGrid = () => {
 
   const fetchedGamesCount =
     data?.pages.reduce((acc, el) => acc + el.results.length, 0) || 0;
-  console.log("Fetched Games Count:", fetchedGamesCount);
   return (
     <InfiniteScroll
       dataLength={fetchedGamesCount}
@@ -31,13 +30,18 @@ const GameGrid = () => {
         rowGap={5}
       >
         {isLoading && skeletons.map((s) => <GameCardSkeleton key={s} />)}
-        {data?.pages.map((page, index) => (
-          <React.Fragment key={index}>
-            {page.results.map((game) => (
-              <GameCard key={game.id} game={game} />
-            ))}
-          </React.Fragment>
-        ))}
+
+        {data?.pages.length === 0 ? (
+          <Text>No games fulfill the criteria</Text>
+        ) : (
+          data?.pages.map((page, index) => (
+            <React.Fragment key={index}>
+              {page.results.map((game) => (
+                <GameCard key={game.id} game={game} />
+              ))}
+            </React.Fragment>
+          ))
+        )}
       </SimpleGrid>
     </InfiniteScroll>
   );

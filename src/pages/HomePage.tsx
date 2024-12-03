@@ -14,7 +14,7 @@ const HomePage = () => {
         lg: `"aside main"`,
       }}
     >
-      <GridItem display={{ lg: "block", base: "none" }}>
+      <GridItem w={"224px"} display={{ lg: "block", base: "none" }}>
         <GenreList />
       </GridItem>
       <GridItem
@@ -22,6 +22,7 @@ const HomePage = () => {
         area={"main"}
         padding={7}
         position={"relative"}
+        w={"calc(100vw - 224px - 40px - 40px)"}
       >
         <GameHeading />
         <HStack gap={5} marginBottom={5}>

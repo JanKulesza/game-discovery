@@ -3,11 +3,13 @@ import { LuSearch } from "react-icons/lu";
 import { InputGroup } from "./ui/input-group";
 import { useRef } from "react";
 import useGameQueryStore from "@/strore";
+import { useNavigate } from "react-router-dom";
 
 const SearchInput = () => {
   const ref = useRef<HTMLInputElement>(null);
 
   const setSearch = useGameQueryStore((s) => s.setSearch);
+  const navigate = useNavigate();
 
   return (
     <form
@@ -15,6 +17,7 @@ const SearchInput = () => {
       onSubmit={(e) => {
         e.preventDefault();
         if (ref.current) setSearch(ref.current.value);
+        navigate("/");
       }}
     >
       <InputGroup w={"100%"} startElement={<LuSearch />}>

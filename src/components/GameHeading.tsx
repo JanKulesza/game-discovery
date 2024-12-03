@@ -18,7 +18,9 @@ const GameHeading = () => {
       </Heading>
       <Text fontSize={18} as={"p"} padding={1}>
         Based on player counts and{" "}
-        {!currentSortOrder ? " Relevance" : currentSortOrder.label}
+        {!currentSortOrder
+          ? " relevance"
+          : currentSortOrder.label.toLowerCase()}
       </Text>
     </Box>
   );
