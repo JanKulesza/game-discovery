@@ -1,3 +1,5 @@
+import { Platform } from "@/hooks/useGames";
+import useLookUp from "@/hooks/useLookup";
 import usePlatform from "@/hooks/usePlatforms";
 import {
   Button,
@@ -18,6 +20,11 @@ interface Props {
 const PlatformSelector = ({ onSelectPlatform, selectedPlatformId }: Props) => {
   const { data: platforms, error } = usePlatform();
 
+  const selectedPlatform =
+    selectedPlatformId && platforms
+      ? useLookUp<Platform>(selectedPlatformId, platforms.data.results)
+      : null;
+
   if (error) return <Text>{error.message}</Text>;
 
   return (
@@ -30,10 +37,7 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatformId }: Props) => {
             variant="outline"
             size="md"
           >
-            {selectedPlatformId
-              ? platforms?.data.results.find((p) => p.id === selectedPlatformId)
-                  ?.name
-              : "Select Platform"}
+            {selectedPlatform?.name || "Select Platform"}
             <BsChevronDown />
           </Button>
         </MenuTrigger>

@@ -2,6 +2,7 @@ import useGenre from "@/hooks/useGenre";
 import { Avatar } from "@/components/ui/avatar";
 import { Heading, HStack, Text, VStack } from "@chakra-ui/react";
 import GenreListSkeleton from "./GenreListSkeleton";
+import { skeletons } from "@/services/constants";
 
 interface Props {
   onSelectGenre: (genreId: number) => void;
@@ -10,7 +11,6 @@ interface Props {
 
 const GenreList = ({ onSelectGenre, selectedGenreId }: Props) => {
   const { data: genres, error, isLoading } = useGenre();
-  const skeletons = [1, 2, 3, 4, 5, 6, 7, 8];
 
   if (error) return <Text>{error.message}</Text>;
 
