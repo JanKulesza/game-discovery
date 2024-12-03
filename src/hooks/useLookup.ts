@@ -1,5 +1,5 @@
-import { Genre } from "@/entities/Genre";
-import { Platform } from "@/entities/Platform";
+import Genre from "@/entities/Genre";
+import Platform from "@/entities/Platform";
 
 const useLookUp = <T extends Genre | Platform>(
   id: number,

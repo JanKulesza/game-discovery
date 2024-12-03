@@ -1,4 +1,4 @@
-import { Platform } from "@/entities/Platform";
+import Platform from "@/entities/Platform";
 import useLookUp from "@/hooks/useLookup";
 import usePlatform from "@/hooks/usePlatforms";
 import { bgColorSecondary } from "@/services/constants";

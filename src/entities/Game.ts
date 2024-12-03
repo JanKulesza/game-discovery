@@ -1,14 +1,16 @@
-import { Genre } from "./Genre";
-import { Platform } from "./Platform";
+import Developer from "./Developer";
+import Genre from "./Genre";
+import Platform from "./Platform";
+import Publisher from "./Publisher";
 
-export interface Game {
+export default interface Game {
   id: number;
   name: string;
   slug: string;
   genres: Genre[];
   released: string;
-  developers: { id: number; name: string }[];
-  publishers: { id: number; name: string }[];
+  developers: Developer[];
+  publishers: Publisher[];
   metacritic: number;
   background_image: string;
   parent_platforms: { platform: Platform }[];

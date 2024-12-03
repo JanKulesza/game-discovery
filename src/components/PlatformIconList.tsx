@@ -5,7 +5,7 @@ import {
   FaApple,
   FaLinux,
 } from "react-icons/fa";
-import { Platform } from "@/entities/Platform";
+import Platform from "@/entities/Platform";
 import { HStack, Icon } from "@chakra-ui/react";
 import { BsGlobe } from "react-icons/bs";
 import { SiNintendo } from "react-icons/si";
