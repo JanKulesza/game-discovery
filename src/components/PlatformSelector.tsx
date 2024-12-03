@@ -1,6 +1,7 @@
 import { Platform } from "@/hooks/useGames";
 import useLookUp from "@/hooks/useLookup";
 import usePlatform from "@/hooks/usePlatforms";
+import useGameQueryStore from "@/strore";
 import {
   Button,
   MenuContent,
@@ -12,17 +13,14 @@ import {
 } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
 
-interface Props {
-  onSelectPlatform: (platformId: number) => void;
-  selectedPlatformId: number | null;
-}
-
-const PlatformSelector = ({ onSelectPlatform, selectedPlatformId }: Props) => {
+const PlatformSelector = () => {
   const { data: platforms, error } = usePlatform();
+  const platformId = useGameQueryStore((s) => s.gameQuery.platformId);
+  const setPlatformId = useGameQueryStore((s) => s.setPlatformId);
 
   const selectedPlatform =
-    selectedPlatformId && platforms
-      ? useLookUp<Platform>(selectedPlatformId, platforms.data.results)
+    platformId && platforms
+      ? useLookUp<Platform>(platformId, platforms.data.results)
       : null;
 
   if (error) return <Text>{error.message}</Text>;
@@ -53,7 +51,7 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatformId }: Props) => {
               cursor="pointer"
               key={p.id}
               value={p.slug}
-              onClick={() => onSelectPlatform(p.id)}
+              onClick={() => setPlatformId(p.id)}
             >
               {p.name}
             </MenuItem>

@@ -3,14 +3,13 @@ import { Avatar } from "@/components/ui/avatar";
 import { Heading, HStack, Text, VStack } from "@chakra-ui/react";
 import GenreListSkeleton from "./GenreListSkeleton";
 import { skeletons } from "@/services/constants";
+import useGameQueryStore from "@/strore";
 
-interface Props {
-  onSelectGenre: (genreId: number) => void;
-  selectedGenreId: number | null;
-}
-
-const GenreList = ({ onSelectGenre, selectedGenreId }: Props) => {
+const GenreList = () => {
   const { data: genres, error, isLoading } = useGenre();
+
+  const genreId = useGameQueryStore((s) => s.gameQuery.genreId);
+  const setGenreId = useGameQueryStore((s) => s.setGenreId);
 
   if (error) return <Text>{error.message}</Text>;
 
@@ -33,17 +32,15 @@ const GenreList = ({ onSelectGenre, selectedGenreId }: Props) => {
             bg={{
               _hover: { _dark: "#202020", _light: "#f4f4f5" },
               base:
-                selectedGenreId === g.id
-                  ? { _dark: "#202020", _light: "#f4f4f5" }
-                  : "",
+                genreId === g.id ? { _dark: "#202020", _light: "#f4f4f5" } : "",
             }}
             onClick={() => {
-              onSelectGenre(g.id);
+              setGenreId(g.id);
             }}
           >
             <Avatar size="sm" src={g.image_background} shape="rounded" />
             <Text
-              fontWeight={selectedGenreId === g.id ? "bold" : ""}
+              fontWeight={genreId === g.id ? "bold" : ""}
               color={{ _dark: "white", _light: "black" }}
             >
               {g.name}

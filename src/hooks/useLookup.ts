@@ -1,5 +1,3 @@
-import { FetchResponse } from "@/services/api-client";
-import { AxiosResponse } from "axios";
 import { Platform } from "./useGames";
 import { Genre } from "./useGenre";
 

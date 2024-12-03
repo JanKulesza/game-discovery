@@ -13,6 +13,5 @@ const useGenre = () =>
     initialData: genres,
     staleTime: 24 * 60 * 60 * 1000, //24h
   });
-// const useGenre = () => useData<Genre>("/genres");
 
 export default useGenre;

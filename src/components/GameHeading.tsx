@@ -1,18 +1,15 @@
-import { GameQuery } from "@/App";
 import { sortOrders } from "@/services/constants";
+import useGameQueryStore from "@/strore";
 import { Box, Heading, Text } from "@chakra-ui/react";
 
-interface Props {
-  gameQuery: GameQuery;
-}
+const GameHeading = () => {
+  const search = useGameQueryStore((s) => s.gameQuery.search);
+  const sortOrder = useGameQueryStore((s) => s.gameQuery.sortOrder);
 
-const GameHeading = ({ gameQuery }: Props) => {
   let heading;
-  if (gameQuery.search) heading = `Searching for ${gameQuery.search}`;
+  if (search) heading = `Searching for ${search}`;
 
-  const currentSortOrder = sortOrders.find(
-    (s) => s.value === gameQuery.sortOrder
-  );
+  const currentSortOrder = sortOrders.find((s) => s.value === sortOrder);
 
   return (
     <Box marginBottom={5} lineHeight={3}>
