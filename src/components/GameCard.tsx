@@ -3,6 +3,7 @@ import { Card, Image } from "@chakra-ui/react";
 import PlatformsIconList from "./PlatformIconList";
 import RatingsCount from "./RatingsCount";
 import getCroppedImage from "@/services/image-url";
+import { Link } from "react-router-dom";
 
 interface Props {
   game: Game;
@@ -11,6 +12,10 @@ interface Props {
 const GameCard = ({ game }: Props) => {
   return (
     <Card.Root
+      _hover={{
+        transform: "scale(1.03)",
+      }}
+      transition={"0.3s"}
       h="fit-content"
       borderRadius="20px"
       bg={{ _dark: "#202020", _light: "#f4f4f5" }}
@@ -28,7 +33,7 @@ const GameCard = ({ game }: Props) => {
         <PlatformsIconList
           platforms={game.parent_platforms.map(({ platform }) => platform)}
         />
-        {game.name}
+        <Link to={`/game/${game.slug}`}>{game.name}</Link>
         <RatingsCount ratingsCount={game.ratings_count} />
       </Card.Header>
     </Card.Root>

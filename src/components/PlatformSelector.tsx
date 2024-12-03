@@ -21,7 +21,7 @@ const PlatformSelector = () => {
 
   const selectedPlatform =
     platformId && platforms
-      ? useLookUp<Platform>(platformId, platforms.data.results)
+      ? useLookUp<Platform>(platformId, platforms.results)
       : null;
 
   if (error) return <Text>{error.message}</Text>;
@@ -47,12 +47,12 @@ const PlatformSelector = () => {
           position={"fixed"}
           marginTop={12}
         >
-          {platforms?.data.results?.map((p) => (
+          {platforms?.results?.map((p) => (
             <MenuItem
               cursor="pointer"
               key={p.id}
               value={p.slug}
-              bg={{ _dark: "teal.700", _light: "teal.300" }}
+              bg={{ _hover: { _dark: "teal.700", _light: "teal.300" } }}
               borderRadius={"0.5em"}
               onClick={() => setPlatformId(p.id)}
             >

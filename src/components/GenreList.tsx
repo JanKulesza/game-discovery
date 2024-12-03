@@ -12,6 +12,7 @@ const GenreList = () => {
   const setGenreId = useGameQueryStore((s) => s.setGenreId);
 
   if (error) return <Text>{error.message}</Text>;
+  console.log(genres?.results);
 
   return (
     <>
@@ -20,7 +21,7 @@ const GenreList = () => {
       </Heading>
       <VStack alignItems="flex-start" paddingLeft={5}>
         {isLoading && skeletons.map((s) => <GenreListSkeleton key={s} />)}
-        {genres?.data.results?.map((g) => (
+        {genres?.results?.map((g) => (
           <HStack
             padding={1}
             borderRadius="0.5em"

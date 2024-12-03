@@ -19,9 +19,13 @@ class APIClient<T> {
     this.endpoint = endpoint;
   }
   getAll = (requestConfig?: AxiosRequestConfig) =>
-    apiClient.get<FetchResponse<T>>(this.endpoint, {
-      ...requestConfig,
-    });
+    apiClient
+      .get<FetchResponse<T>>(this.endpoint, {
+        ...requestConfig,
+      })
+      .then((res) => res.data);
+  get = (slug: string) =>
+    apiClient.get<T>(this.endpoint + "/" + slug).then((res) => res.data);
 }
 
 export default APIClient;
