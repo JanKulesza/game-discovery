@@ -19,7 +19,7 @@ Welcome to **Game Discovery**, a modern and sleek platform for discovering and e
 
 ## Live Demo
 
-Check out the live version of the application here: [Game Discovery](https://game-discovery-hu6dylwy3-jan-kuleszas-projects.vercel.app/)
+Check out the live version of the application here: [Game Discovery](https://game-discovery-xi.vercel.app/)
 
 ### To run the application in development mode:
 ```bash
