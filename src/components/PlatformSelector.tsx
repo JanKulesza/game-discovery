@@ -1,6 +1,7 @@
 import { Platform } from "@/hooks/useGames";
 import useLookUp from "@/hooks/useLookup";
 import usePlatform from "@/hooks/usePlatforms";
+import { bgColorSecondary } from "@/services/constants";
 import useGameQueryStore from "@/strore";
 import {
   Button,
@@ -30,7 +31,7 @@ const PlatformSelector = () => {
       <VStack>
         <MenuTrigger asChild>
           <Button
-            bg={{ _dark: "#202020", _light: "#f4f4f5" }}
+            bg={bgColorSecondary}
             color={{ _dark: "white", _light: "black" }}
             variant="outline"
             size="md"
@@ -51,6 +52,8 @@ const PlatformSelector = () => {
               cursor="pointer"
               key={p.id}
               value={p.slug}
+              bg={{ _dark: "teal.700", _light: "teal.300" }}
+              borderRadius={"0.5em"}
               onClick={() => setPlatformId(p.id)}
             >
               {p.name}

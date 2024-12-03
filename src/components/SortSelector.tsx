@@ -1,4 +1,4 @@
-import { sortOrders } from "@/services/constants";
+import { bgColorSecondary, sortOrders } from "@/services/constants";
 import useGameQueryStore from "@/strore";
 import {
   MenuRoot,
@@ -21,7 +21,7 @@ const SortSelector = () => {
       <VStack>
         <MenuTrigger asChild>
           <Button
-            bg={{ _dark: "#202020", _light: "#f4f4f5" }}
+            bg={bgColorSecondary}
             color={{ _dark: "white", _light: "black" }}
             variant="outline"
             size="md"
@@ -43,6 +43,8 @@ const SortSelector = () => {
               onClick={() => setSortOrder(order.value)}
               key={order.value}
               value={order.value}
+              bg={{ _hover: { _dark: "teal.700", _light: "teal.300" } }}
+              borderRadius={"0.5em"}
             >
               {order.label}
             </MenuItem>

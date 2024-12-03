@@ -1,8 +1,9 @@
 form {
   width: 80%;
 }
-html,
 body {
   height: 100%;
-  padding: 10px;
+  width: 100%;
+  margin: 0;
+  padding: 20px;
 }

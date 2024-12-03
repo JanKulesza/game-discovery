@@ -30,9 +30,11 @@ const GenreList = () => {
             w="100%"
             h="100%"
             bg={{
-              _hover: { _dark: "#202020", _light: "#f4f4f5" },
+              _hover: { _dark: "teal.700", _light: "teal.200" },
               base:
-                genreId === g.id ? { _dark: "#202020", _light: "#f4f4f5" } : "",
+                genreId === g.id
+                  ? { _dark: "teal.700", _light: "teal.200" }
+                  : "",
             }}
             onClick={() => {
               setGenreId(g.id);

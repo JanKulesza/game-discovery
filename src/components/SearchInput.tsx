@@ -11,6 +11,7 @@ const SearchInput = () => {
 
   return (
     <form
+      style={{ width: "100%" }}
       onSubmit={(e) => {
         e.preventDefault();
         if (ref.current) setSearch(ref.current.value);

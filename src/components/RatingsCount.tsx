@@ -1,3 +1,4 @@
+import { bgColorSecondary } from "@/services/constants";
 import { Button, Icon, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { FaPlus } from "react-icons/fa";
@@ -11,12 +12,8 @@ const RatingCounts = ({ ratingsCount }: Props) => {
   return (
     <Button
       onClick={() => setRatings(ratings + 1)}
-      bg={{
-        _dark: "#373737",
-        _light: "#e4e4e7",
-        _hover: { _dark: "#505050", base: "#999999" },
-      }}
-      transition="0.5s"
+      bg={bgColorSecondary}
+      transition="0.3s"
       border="none"
       marginTop={1}
       minWidth="2.75em"

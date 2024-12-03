@@ -8,3 +8,9 @@ export const sortOrders = [
 ];
 
 export const skeletons = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+
+export const bgColorSecondary = {
+  _dark: "teal.700",
+  _light: "teal.200",
+  _hover: { _dark: "teal.500", _light: "teal.300" },
+};
