@@ -16,7 +16,7 @@ const GenreList = () => {
 
   return (
     <>
-      <Heading color="white" fontWeight="bold" fontSize={30} margin={5}>
+      <Heading fontWeight="bold" fontSize={30} margin={5}>
         Genres
       </Heading>
       <VStack alignItems="flex-start" paddingLeft={5}>

@@ -4,7 +4,11 @@ import { Outlet } from "react-router-dom";
 
 const Layout = () => {
   return (
-    <Box bg="#181414" minHeight="100vh" padding={"20px"}>
+    <Box
+      bg={{ _dark: "#181414", _light: "white" }}
+      minHeight="100vh"
+      padding={"20px"}
+    >
       <NavBar />
       <Box padding={5}>
         <Outlet />

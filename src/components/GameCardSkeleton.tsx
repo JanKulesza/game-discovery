@@ -5,7 +5,7 @@ const GameCardSkeleton = () => {
   return (
     <Card.Root
       minHeight="fit-content"
-      w="400px"
+      w="350px"
       borderRadius="20px"
       bg={{ _dark: "#202020" }}
       border="none"
