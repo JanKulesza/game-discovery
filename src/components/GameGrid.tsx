@@ -39,9 +39,6 @@ const GameGrid = () => {
           </React.Fragment>
         ))}
       </SimpleGrid>
-      <Button onClick={() => fetchNextPage()} marginTop={3}>
-        Load More
-      </Button>
     </InfiniteScroll>
   );
 };
