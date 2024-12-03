@@ -1,5 +1,5 @@
-import { Platform } from "./useGames";
-import { Genre } from "./useGenre";
+import { Genre } from "@/entities/Genre";
+import { Platform } from "@/entities/Platform";
 
 const useLookUp = <T extends Genre | Platform>(
   id: number,

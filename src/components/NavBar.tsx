@@ -18,6 +18,7 @@ const NavBar = () => {
       </Text>
       <SearchInput />
       <ColorModeButton
+        borderRadius={"0.5em"}
         size={"lg"}
         bg={bgColorSecondary}
         marginRight={{ base: "3em", mdDown: "1px" }}

@@ -15,6 +15,7 @@ const RatingCounts = ({ ratingsCount }: Props) => {
       bg={bgColorSecondary}
       transition="0.3s"
       border="none"
+      borderRadius={"0.5em"}
       marginTop={1}
       minWidth="2.75em"
       width="fit-content"

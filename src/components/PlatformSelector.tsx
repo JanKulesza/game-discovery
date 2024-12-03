@@ -1,4 +1,4 @@
-import { Platform } from "@/hooks/useGames";
+import { Platform } from "@/entities/Platform";
 import useLookUp from "@/hooks/useLookup";
 import usePlatform from "@/hooks/usePlatforms";
 import { bgColorSecondary } from "@/services/constants";
@@ -31,6 +31,7 @@ const PlatformSelector = () => {
       <VStack>
         <MenuTrigger asChild>
           <Button
+            borderRadius={"0.5em"}
             bg={bgColorSecondary}
             color={{ _dark: "white", _light: "black" }}
             variant="outline"

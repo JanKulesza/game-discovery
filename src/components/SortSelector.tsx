@@ -21,6 +21,7 @@ const SortSelector = () => {
       <VStack>
         <MenuTrigger asChild>
           <Button
+            borderRadius={"0.5em"}
             bg={bgColorSecondary}
             color={{ _dark: "white", _light: "black" }}
             variant="outline"
