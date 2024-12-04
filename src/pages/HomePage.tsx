@@ -22,7 +22,10 @@ const HomePage = () => {
         area={"main"}
         padding={7}
         position={"relative"}
-        w={{ lgTo2xl: "calc(100vw - 224px - 40px - 40px)" }}
+        w={{
+          xl: "calc(100vw - 224px - 40px - 40px)",
+          lgTo2xl: "calc(100vw - 224px - 40px - 40px)",
+        }}
       >
         <GameHeading />
         <HStack gap={5} marginBottom={5}>
