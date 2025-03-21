@@ -4,18 +4,24 @@ Welcome to **Game Discovery**, a modern and sleek platform for discovering and e
 
 ## Features
 
-- **Game Browsing**: Explore a wide range of games with detailed information.
+- **Game Browsing**: Explore a wide range of games with detailed information and advanced filtering.
 - **Responsive Design**: Optimized for both desktop and mobile devices.
 - **API Integration**: Data is fetched dynamically from external APIs, ensuring up-to-date information.
 - **TypeScript**: Leveraging the power of TypeScript for type safety and enhanced code quality.
 
 ## Tech Stack
 
-- **React**: JavaScript library for building user interfaces.
-- **TypeScript**: Superset of JavaScript that adds static types.
-- **Vite**: Next Generation Frontend Tooling for fast build times and development experience.
-- **Chakra UI**: A simple, modular, and accessible component library.
-- **Vercel**: Hosting platform for deploying the application.
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![Zustand](https://img.shields.io/badge/Zustand-764ABC?style=for-the-badge&logo=redux&logoColor=white)
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+![React Query](https://img.shields.io/badge/React_Query-FF4154?style=for-the-badge&logo=react-query&logoColor=white)
+![Chakra UI](https://img.shields.io/badge/Chakra_UI-319795?style=for-the-badge&logo=chakra-ui&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+![RAWG API](https://img.shields.io/badge/RAWG_API-000000?style=for-the-badge&logo=rawg&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
 
 ## Live Demo
 
